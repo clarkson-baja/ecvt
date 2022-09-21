@@ -1,3 +1,3 @@
 #!/bin/bash
-rm -rf bin
-rm -rf build
+
+ninja -C builddir -t clean
