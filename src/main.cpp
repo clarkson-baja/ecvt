@@ -1,5 +1,4 @@
 #define Phoenix_No_WPI
-#include "ctre/Phoenix.h"
 #include "ctre/phoenix/motorcontrol/can/TalonSRX.h"
 #include "ctre/phoenix/platform/Platform.h"
 #include "ctre/phoenix/unmanaged/Unmanaged.h"
@@ -10,6 +9,7 @@
 
 using namespace ctre::phoenix;
 using namespace ctre::phoenix::platform;
+using namespace ctre::phoenix::unmanaged;
 using namespace ctre::phoenix::motorcontrol;
 using namespace ctre::phoenix::motorcontrol::can;
 
@@ -23,7 +23,7 @@ int main() {
 	shifter.ConfigOpenloopRamp(5.0);
 
 	while(true) {
-		ctre::phoenix::unmanaged::Unmanaged::FeedEnable(100);
+		Unmanaged::FeedEnable(100);
 		shifter.Set(ControlMode::PercentOutput, 1.00);
 		sleepApp(20);
 	}
