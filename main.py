@@ -6,7 +6,7 @@ PWM_CHIP_PATH = "/sys/class/pwm/pwmchip0"
 
 ###### ----  Main Code  ---- ######
 import os
-from . import syspwm as pwm
+import syspwm as pwm
 from time import sleep
 
 OVERLAYS = {"pwm-f": 1, "pwm-a": 0}

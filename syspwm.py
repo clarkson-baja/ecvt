@@ -5,9 +5,9 @@ def _echo(fil: str, msg):
 
 def enable(enabled, pin_dir):
     if enabled:
-        _echo(f"{pin_dir}/enabled", 1)
+        _echo(f"{pin_dir}/enable", 1)
     else:
-        _echo(f"{pin_dir}/enabled", 0)
+        _echo(f"{pin_dir}/enable", 0)
 
 
 def set_duty_cycle_ns(duty_cycle_ns, pin_dir):
@@ -35,11 +35,11 @@ class PWMPin:
             f.write("{msg}\n".format(msg=msg))
 
     def enable(self):
-        self._echo("enabled", 1)
+        self._echo("enable", 1)
         return self
 
     def disable(self):
-        self._echo("enabled", 0)
+        self._echo("enable", 0)
         return self
 
     def set_period(self, nanoseconds: int):
